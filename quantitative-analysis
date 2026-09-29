@@ -1,3 +1,5 @@
 portfolio/README.md
-portfolio/bayesian-modeling.md
-portfolio/into-python.md
+portfolio/quantitative-analysis.md
+portfolio/quantitative-analysis/bayesian-modeling.md
+portfolio/quantitative-analysis/python.md
+portfolio/quantitative-analysis/simulation.md
