@@ -1,19 +1,12 @@
-title: 'Psy123a Homework Excerpts (Simulations)'
-author: "Sarah Pitan"
-date: "09/29/2026"
-output:
-  html_document: 
-    code_folding: show
 
-## Description
-These homework excerpts for Psy123a "Bayesian Statistical Modeling" 
-(Professor: Dr. Liu, Brandeis University) demonstrates simulation. 
-Simulation generates large amounts of synthetic data which help an analyst
-understand uncertainty in the estimated probability of a target event. 
-Transferable skills: estimate probability of event occurence using incomplete starting data.
+# Description
 
-# set working directory 
-setwd("C:/Users/pitan/OneDrive/Documents/Brandeis/Fall 2026/Psy123a_F2026")
+# These homework excerpts for Psy123a "Bayesian Statistical Modeling" 
+# (Professor: Dr. Liu, Brandeis University) demonstrates simulation. 
+# Simulation generates large amounts of synthetic data which help an analyst
+# understand uncertainty in the estimated probability of a target event. 
+
+# Transferable skills: estimate probability of event occurence using incomplete starting data.
 
 # clear working space
 rm(list = ls())
