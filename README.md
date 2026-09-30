@@ -1,2 +1,26 @@
-# portfolio
-Collection of projects related to behavioral analysis, quantitative research, data analysis, and computational modeling.
+
+**TODO** Make AI Use all-inclusive.
+
+# Intelligence Analysis
+
+This section of the portfolio contains briefs, reports, and projects related to the process of collecting, systematizing, analyzing, and interpreting data with the end goal of evaluating human behaviors and levels of risk. 
+
+## Contents
+Briefs
+Reports
+Projects
+
+## AI Use
+ChatGPT and Grok were used as tools for debugging, grammar edits, and term definition. 
+
+### Briefs
+Condensed evaluations of evidence surrounding a central problem, emphasizing uncertainty and analytical conclusions.
+
+### Reports
+5-10 page document implementing the following high-level structure: problem, analysis, assessment. Goal: analyze a situation involving risk in order to inform strategic response to potential threat.
+
+### Projects
+Collection of documents and software programs investigating a hypothesis, gathering data, and modeling data in order to identify key variables correlated with the target event. Ultimately, influencing these variables to manipulate or neutralize the event is the goal. 
+
+### Case Studies
+
