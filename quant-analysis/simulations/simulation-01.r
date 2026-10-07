@@ -1,25 +1,53 @@
 
 # Description
 
-# These homework excerpts for Psy123a "Bayesian Statistical Modeling" 
+# These coursework excerpts for Psy123a "Bayesian Statistical Modeling" 
 # (Professor: Dr. Liu, Brandeis University) demonstrates simulation. 
 # Simulation generates large amounts of synthetic data which help an analyst
 # understand uncertainty in the estimated probability of a target event. 
 
 # Transferable skills: estimate probability of event occurence using incomplete starting data.
 
+# Note: All R script was developed and tested in RStudio.
+
+# Objective:
+# Estimate the probability (theta) that study participants will successfully resist compulsive impulse. 
+# The prior belief of researcher Ciara: theta ~ Beta(3, 10)
+# The prior belief of researcher Ciara: theta ~ Beta(2, 0.1)
+
 # clear working space
 rm(list = ls())
 
-# loading packages
-library(bayesrules)
-library(dplyr)
-library(janitor)
-library(ggplot2)
-library(knitr)
+# Plot and table summarizing the researchers' priors, theta.
 
-# Simulation 1: 
-# Simulate the posterior and estimate its mean, SD, and middle 95% values of theta.
+# Ciara's prior: plot
+  #visual representation
+  plot_beta(alpha = 3, beta = 10)+
+    labs(
+      title = "Ciara's prior Summary",
+      x = expression(pi),
+      y = "Density"
+    )
+    
+# Ciara's prior: table
+  cat('Ciara\'s Prior Summary: \n\n')
+  print(summarize_beta(3, 10))
+
+# Taylor's prior: plot
+  #visual representation
+  plot_beta(alpha = 2, beta = .1)+
+    labs(
+      title = "Taylor's prior Summary",
+      x = expression(pi),
+      y = "Density"
+    )
+    
+# Taylor's prior: table
+  cat('Taylor\'s Prior Summary: \n\n')
+  print(summarize_beta(2, .1))
+
+# Researcher Chad obtains the experiment's data and observes that among 7 total participants, 3 participants succesffully resisted impulses.
+# Simulate the posterior and estimate its mean, SD, and middle 95% values of theta based on Research Ciara and Taylor's priors.
 
 #Calculate alpha.posterior and beta.posterior 
 
