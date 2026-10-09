@@ -1,12 +1,7 @@
 
 # Description
 
-# These coursework excerpts for Psy123a "Bayesian Statistical Modeling" 
-# (Professor: Dr. Liu, Brandeis University) demonstrates simulation. 
-# Simulation generates large amounts of synthetic data which help an analyst
-# understand uncertainty in the estimated probability of a target event. 
-
-# Transferable skills: estimate probability of event occurence using incomplete starting data.
+# This coursework excerpts for Psy123a "Bayesian Statistical Modeling" (Professor: Dr. Liu, Brandeis University) demonstrates simulation. Template given by the Professor. 
 
 # Note: All R script was developed and tested in RStudio.
 
@@ -17,6 +12,9 @@
 
 # clear working space
 rm(list = ls())
+
+# dependencies
+source('dependencies-simulation-01.R')
 
 # Plot and table summarizing the researchers' priors, theta.
 
