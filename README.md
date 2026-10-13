@@ -27,10 +27,10 @@ Reports that analyze notable U.S events to assess risk and inform strategic resp
 
 #### Psychological Profiles
 Reports that analyze publicly documented behaviors of individuals with abnormal psychologies to infer mental state and motivations.
-> Bryan Kohberger / University of Idaho Murders
-[Background: Wikipedia](https://en.wikipedia.org/wiki/2022_Idaho_student_murders)
-> Rex Heuermann / Gilgo Beach Murders
-[Background: Grokipedia](https://grokipedia.com/page/Rex_Heuermann)
+> Bryan Kohberger / University of Idaho Murders  
+[Background: Wikipedia](https://en.wikipedia.org/wiki/2022_Idaho_student_murders)  
+> Rex Heuermann / Gilgo Beach Murders  
+[Background: Grokipedia](https://grokipedia.com/page/Rex_Heuermann)  
 
 
 ## Projects
