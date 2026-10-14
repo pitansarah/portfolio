@@ -7,4 +7,6 @@ This brief reviews the case of Zachary Davis and establishes a diagnosis framewo
 ```mermaid
 graph TD
     A[5HTA] --> B[PFC inhibition] --> C[threat-detection disinhibition or threat-detection inhibition] --> D[threat = everything]
+    D -- [you]
+    D -- [others]
 
