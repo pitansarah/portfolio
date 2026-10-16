@@ -13,6 +13,7 @@ Psychological Analysis
 1. Analyze intellectual disability in schizophrenia
 1. Analyze intellectual disability in bvFTD
 1. Cross compare intellectual disability in schizophrenia and intellectual disability in bvFTD
+**TODO**: Replace game-theory related tasks with real-world data on some task involving executive functioning* 
 1. Introduce game-theory model as test of cognitive method during task: self-caused social conflict resolution.
 
 Computational Analysis

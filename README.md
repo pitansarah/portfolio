@@ -1,6 +1,26 @@
 
 *Portfolio structure overview.*
 
+# Criminal Profiles
+
+Analyze crime scene evidence and behavioral patterns to delineate the probable demographic, psychological, and operational characteristics of a criminal offender.
+
+> Bryan Kohberger / University of Idaho Murders  
+[Background: Wikipedia](https://en.wikipedia.org/wiki/2022_Idaho_student_murders)  
+> Rex Heuermann / Gilgo Beach Murders  
+[Background: Grokipedia](https://grokipedia.com/page/Rex_Heuermann)  
+> Nidal Hasan / Fort Hood Shootings
+[Background: Grokipedia](https://grokipedia.com/page/Nidal_Hasan)
+
+**TODO**: 
+*As of Fri, 10/19/2026 17:00*
+- Finish Poppe notes.
+- Finish article 2 notes.
+- Finish article 3 notes.
+- Pick research articles for Heuermann.
+- Pick research articles for Epstein.
+- Pick research articles for Kohberger.
+
 # Intelligence Analysis
 
 Contains briefs, reports, and projects that collect, analyze, and interpret data with the end goal of evaluating human behaviors and risk. 
@@ -31,27 +51,28 @@ Evaluations of evidence surrounding a central problem, emphasizing uncertainty a
 # Psychological Evaluations
 Reports that analyze publicly documented behaviors of individuals with abnormal psychologies to infer mental state.
 
-## Reports
-> Bryan Kohberger / University of Idaho Murders  
-[Background: Wikipedia](https://en.wikipedia.org/wiki/2022_Idaho_student_murders)  
-> Rex Heuermann / Gilgo Beach Murders  
-[Background: Grokipedia](https://grokipedia.com/page/Rex_Heuermann)  
-> Nidal Hasan / Fort Hood Shootings
-[Background: Grokipedia](https://grokipedia.com/page/Nidal_Hasan)
+## Briefs
+Concise report that synthesizes an individual's psychological history, behavioral patterns, and underlying motivations to evaluate mental state, assess potential risks, or inform operational decisions.
+> Schizophrenia & Low IQ
+> MDD & DID
+> Zachary Davis
+[Background: YouTube](https://youtu.be/V_xfyBIosbc?si=MIWiO62tRaYCDrqs)
 
 # Quantitative Analysis
 Contains coursework excerpts demonstrating statistical modeling. Written in Python and R. 
 
 ## Bayesian-Modeling (R)
-
-### Grid Approximation
-A dense grid of candidate μ values is scored by prior times likelihood and normalized into a discrete posterior, which is then plotted and sampled without an analytic normalizing constant.
+Operates by updating the probability of a hypothesis as new data becomes available, combining prior knowledge with observed evidence via Bayes' theorem. Its purpose is to quantify uncertainty and make dynamic, data-driven inferences or predictions about complex systems.
 **TODO:**
 *As of 16:50, Fri, 10/09/26.*
 - Create `grid-approx-01.R`.
 - Create `dependencies-simulation-01.R`.
 - Create `inference-01.R`.
 - Create `dependencies-inference-01.R`.
+
+### Grid Approximation
+A dense grid of candidate μ values is scored by prior times likelihood and normalized into a discrete posterior, which is then plotted and sampled without an analytic normalizing constant.
+
 
 ### Inference
 Statistical estimation from data and a probability model, including how that estimate changes as evidence is added.
@@ -72,6 +93,8 @@ Estimates the popualation mean reaction time by gridding a normal prior against 
 
 ### Exercises
 Brief python programs accomplishing simple tasks to demonstrate problem-solving and technical skill.
+> Factorial Calculator
+> Vowel Counter
 
 ### Projects
 > Crime Tracker 
