@@ -5,21 +5,22 @@
 
 Analyze crime scene evidence and behavioral patterns to delineate the probable demographic, psychological, and operational characteristics of a criminal offender.
 
-> Bryan Kohberger / University of Idaho Murders  
-[Background: Wikipedia](https://en.wikipedia.org/wiki/2022_Idaho_student_murders)  
+> Jeffrey Epstein / Sex Trafficking Indictment   
+[Background: Grokipedia](https://grokipedia.com/page/Jeffrey_Epstein)     
+> Nidal Hasan / Fort Hood Shootings   
+[Background: Grokipedia](https://grokipedia.com/page/Nidal_Hasan)    
 > Rex Heuermann / Gilgo Beach Murders  
-[Background: Grokipedia](https://grokipedia.com/page/Rex_Heuermann)  
-> Nidal Hasan / Fort Hood Shootings
-[Background: Grokipedia](https://grokipedia.com/page/Nidal_Hasan)
+[Background: Grokipedia](https://grokipedia.com/page/Rex_Heuermann)     
+> Bryan Kohberger / University of Idaho Murders  
+[Background: Wikipedia](https://en.wikipedia.org/wiki/2022_Idaho_student_murders)     
+
 
 **TODO**: 
-*As of Fri, 10/19/2026 17:00*
-- Finish Poppe notes.
-- Finish article 2 notes.
-- Finish article 3 notes.
-- Pick research articles for Heuermann.
-- Pick research articles for Epstein.
-- Pick research articles for Kohberger.
+*As of Wed, 10/21/2026 17:00*
+- Finish BTA Ch 3 notes .
+- Pick info sources for Epstein.
+- Pick info sources for Heuermann.
+- Pick info sources for Kohberger.
 
 # Intelligence Analysis
 
@@ -56,7 +57,7 @@ Concise report that synthesizes an individual's psychological history, behaviora
 > Schizophrenia & Low IQ
 > MDD & DID
 > Zachary Davis
-[Background: YouTube](https://youtu.be/V_xfyBIosbc?si=MIWiO62tRaYCDrqs)
+[Background: YouTube](https://youtu.be/V_xfyBIosbc?si=MIWiO62tRaYCDrqs)  
 
 # Quantitative Analysis
 Contains coursework excerpts demonstrating statistical modeling. Written in Python and R. 
@@ -64,18 +65,19 @@ Contains coursework excerpts demonstrating statistical modeling. Written in Pyth
 ## Bayesian-Modeling (R)
 Operates by updating the probability of a hypothesis as new data becomes available, combining prior knowledge with observed evidence via Bayes' theorem. Its purpose is to quantify uncertainty and make dynamic, data-driven inferences or predictions about complex systems.
 **TODO:**
-*As of 16:50, Fri, 10/09/26.*
-- Create `grid-approx-01.R`.
-- Create `dependencies-simulation-01.R`.
-- Create `inference-01.R`.
-- Create `dependencies-inference-01.R`.
+*As of 16:31, Wed, 10/21/26.*
+- Create grid-approx-01.R.
+- Create dependencies-simulation-01.R.
+- Create MCMC/MH algorithm.R
 
 ### Grid Approximation
 A dense grid of candidate μ values is scored by prior times likelihood and normalized into a discrete posterior, which is then plotted and sampled without an analytic normalizing constant.
 
-
 ### Inference
 Statistical estimation from data and a probability model, including how that estimate changes as evidence is added.
+
+### Markov Chain Monte Carlo (MCMC) / Metropolis-Hastings (MH) Algorithm
+MCMC: A computational method for sampling from complex probability distributions by constructing a Markov chain whose stationary distribution matches the target. MH: A foundational MCMC technique that iteratively proposes and probabilistically accepts or rejects new parameter states to approximate intractable posterior distributions.       
 
 ### Sequential Updating
 The posterior from one batch of reaction times becomes the prior for the next batch, so the estimate of μ is revised as new observations arrive instead of being refit from scratch.
