@@ -54,7 +54,7 @@ Reports that analyze publicly documented behaviors of individuals with abnormal 
 
 ## Briefs
 Concise report that synthesizes an individual's psychological history, behavioral patterns, and underlying motivations to evaluate mental state, assess potential risks, or inform operational decisions.
-> Schizophrenia & Low IQ
+> Schizophrenia & Social Learning
 > MDD & DID
 > Zachary Davis
 [Background: YouTube](https://youtu.be/V_xfyBIosbc?si=MIWiO62tRaYCDrqs)  
