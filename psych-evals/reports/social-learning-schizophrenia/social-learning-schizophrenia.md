@@ -10,11 +10,14 @@
         1. **Define Priors**: 
             - *Learning Level*: What is the probability of the individual successfully changing strategy with the aim of repairing a social conflict?
             - *Conflict Sensitivity*: What is the probability that modifying strategy will cause inner conflict for the individual?
-            - *Ontological Divergence Rate*: What is the probability that the individual changes his/her understanding of the game's purpose/definition instead of learning?   
-        2. **Define likelihood**:
-        3. **Update the prior (posterior)**:
-        4. **Run simulation (MCMC)**:
-        5. **Inference from posterior**:
+            - *Reality Divergence Rate*: What is the probability that the individual changes his/her understanding of the game's purpose/definition instead of learning?   
+        1. **Run simulation (Data)**:
+            - Simulation runs: Agents play $N$ rounds of Hawk-Dove. Data is logged into the table above.
+            - Bayesian Inference runs: Take logged table, pass it into PyMC, and use MCMC sampling.
+            - Posterior Check: The model indicates, for example: "Given the choices they made after triggering clashes, there is a 95% probability that this participant's learning rate $\alpha$ lies between $0.15$ and $0.25$."
+        1. **Define likelihood**:
+        1. **Posterior**:
+        1. **Inference**:
         
 3. Results
 4. Discussion

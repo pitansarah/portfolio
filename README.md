@@ -17,10 +17,11 @@ Analyze crime scene evidence and behavioral patterns to delineate the probable d
 
 **TODO**: 
 *As of Wed, 10/21/2026 17:00*
-- Finish BTA Ch 3 notes .
+- Finish BTA Ch 3 notes.
 - Pick info sources for Epstein.
 - Pick info sources for Heuermann.
 - Pick info sources for Kohberger.
+- Make Hasan overview.
 
 # Intelligence Analysis
 
@@ -48,27 +49,50 @@ Evaluations of evidence surrounding a central problem, emphasizing uncertainty a
 > 2024 Salt Typhoon
 [Background: Grokipedia](https://grokipedia.com/page/Salt_Typhoon)
 
+**TODO**
+*As of 10/23/26 10:30AM*
+- Find info sources for Russian Interference report.
+- Find info sources for Havana syndrome report.
+- Find info sources for Jan 6 Attack report.
+- Find info sources for Salt Typhoon report. 
 
 # Psychological Evaluations
 Reports that analyze publicly documented behaviors of individuals with abnormal psychologies to infer mental state.
 
 ## Briefs
 Concise report that synthesizes an individual's psychological history, behavioral patterns, and underlying motivations to evaluate mental state, assess potential risks, or inform operational decisions.
-> Schizophrenia & Social Learning
-> MDD & DID
 > Zachary Davis
 [Background: YouTube](https://youtu.be/V_xfyBIosbc?si=MIWiO62tRaYCDrqs)  
+
+**TODO**:
+- Zachary...: Find info sources.
+- Zachary...: Make overview.
+- Zachary...: Make starter sentences.
+
+
+## Essays
+Present an argument that synthesizes academic research to evaluate a specific concept or hypothesis.
+
+> Delusions May Occur Without Aberrant Salience
+
+**TODO**
+*As of 10/23/26 10:30AM*
+- Delusions...: Get info sources 
+- Delusions...: Make starter sentences for each section.
+
+
+## Reports
+Formal document that evaluates empirical findings to diagnose a condition and outline actionable recommendations.
+
+> Schizophrenia & Social Learning 
+**TODO**:
+- Schizophrenia &...: Build simulation framework ()
 
 # Quantitative Analysis
 Contains coursework excerpts demonstrating statistical modeling. Written in Python and R. 
 
 ## Bayesian-Modeling (R)
 Operates by updating the probability of a hypothesis as new data becomes available, combining prior knowledge with observed evidence via Bayes' theorem. Its purpose is to quantify uncertainty and make dynamic, data-driven inferences or predictions about complex systems.
-**TODO:**
-*As of 16:31, Wed, 10/21/26.*
-- Create grid-approx-01.R.
-- Create dependencies-simulation-01.R.
-- Create MCMC/MH algorithm.R
 
 ### Grid Approximation
 A dense grid of candidate μ values is scored by prior times likelihood and normalized into a discrete posterior, which is then plotted and sampled without an analytic normalizing constant.
@@ -91,16 +115,17 @@ Compares the prior beliefs of two researchers estimating the probability of part
 > Simulation 2: Reaction Times
 Estimates the popualation mean reaction time by gridding a normal prior against a bounded biweight likelihood fro five observed reaction times, then plots the posterior and summarizes it with draws.
 
-## Python
+**TODO:**
+*As of 16:31, Wed, 10/21/26.*
+- Create grid-approx-01.R.
+- Create dependencies-simulation-01.R.
+- Create MCMC/MH algorithm.R
 
-### Exercises
-Brief python programs accomplishing simple tasks to demonstrate problem-solving and technical skill.
-> Factorial Calculator
-> Vowel Counter
+## Python
 
 ### Projects
 > Crime Tracker 
-Uses publically available data to summarize crime trends.
+Uses publicly available data to summarize crime trends.
 > Relationship Mapping Tool
 Maps connections between target individuals by profession and documented connection to key current events. *Related: Project SHADOW.*
 > Texting Risk Assessment Calculator 
