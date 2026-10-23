@@ -1,6 +1,13 @@
 
 *Portfolio structure overview.*
 
+# Workflow
+1. Block 1: Quantitative Analysis
+1. Block 2: Source-Gathering
+1. Block 3: Writing
+1. Block 4: Reading
+1. Block 5: Cleanup 
+
 # Criminal Profiles
 
 Analyze crime scene evidence and behavioral patterns to delineate the probable demographic, psychological, and operational characteristics of a criminal offender.
