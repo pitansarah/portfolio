@@ -3,7 +3,7 @@
 *This report is the final project for the Bayesian Statistical Modeling course at Brandeis, taught by Dr. Xiaodong Liu (Professor of Psychology).*
 
 1. Abstract
-    The aim of this report is to quantify how people with schizophrenia adjust strategy after self-caused social conflict in a game-theory task, and to treat the social adjustment patterns as a premorbid candidate cognitive endophenotype for schizophrenia.
+    The aim of this report is to quantify how people with schizophrenia adjust strategy after self-caused social conflict in a game-theory task, and to treat the social adjustment patterns as a premorbid markers for schizophrenia.
 
 2. Methods
     Bayesian Statistical Modeling
@@ -11,7 +11,7 @@
             - *Learning Level*: What is the probability of the individual successfully changing strategy with the aim of repairing a social conflict?
             - *Conflict Sensitivity*: What is the probability that modifying strategy will cause inner conflict for the individual?
             - *Reality Divergence Rate*: What is the probability that the individual changes his/her understanding of the game's purpose/definition instead of learning?   
-        1. **Run simulation (Data)**:
+        1. **Run game-theory simulation (Data)**:
             - Simulation runs: Agents play $N$ rounds of Hawk-Dove. Data is logged into the table above.
             - Bayesian Inference runs: Take logged table, pass it into PyMC, and use MCMC sampling.
             - Posterior Check: The model indicates, for example: "Given the choices they made after triggering clashes, there is a 95% probability that this participant's learning rate $\alpha$ lies between $0.15$ and $0.25$."

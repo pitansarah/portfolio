@@ -80,7 +80,7 @@ Concise report that synthesizes an individual's psychological history, behaviora
 ## Essays
 Present an argument that synthesizes academic research to evaluate a specific concept or hypothesis.
 
-> Delusions May Occur Without Aberrant Salience
+> Delusions May Occur Without Aberrant Salience   
 
 **TODO**
 *As of 10/23/26 10:30AM*
@@ -91,8 +91,9 @@ Present an argument that synthesizes academic research to evaluate a specific co
 ## Reports
 Formal document that evaluates empirical findings to diagnose a condition and outline actionable recommendations.
 
-> Schizophrenia & Social Learning 
+> Schizophrenia & Social Learning    
 **TODO**:
+- Find info sources on: 1) current research on schizophrenia/social learning and 2) Hawk-Dove game modeling. 
 - Schizophrenia &...: Build simulation framework ()
 
 # Quantitative Analysis
@@ -123,10 +124,21 @@ Compares the prior beliefs of two researchers estimating the probability of part
 Estimates the popualation mean reaction time by gridding a normal prior against a bounded biweight likelihood fro five observed reaction times, then plots the posterior and summarizes it with draws.
 
 **TODO:**
-*As of 16:31, Wed, 10/21/26.*
+*As of 13:15, Fri, 10/30/26.*
 - Create grid-approx-01.R.
 - Create dependencies-simulation-01.R.
-- Create MCMC/MH algorithm.R
+- Create MCMC/MH algorithm.R (HW #8: Questions 2, 3, & 4a)
+- Create conjugate-models-01.R
+    Normal-Normal conjugate model (HW #8: Question 4c)
+    Beta-Binomial conjugate model (HW #9: Questions 5a–c & 6a–c)
+- Create stan-mcmc-odels-01.R HW #8: (Question 5a; HW #9: Questions 7a–b)
+- Create mcmc-diagnostics-01.R
+    Trace plots, rank plots, and ACF visual inspections (HW #8: Questions 4b & 5b; HW #9: Question 8b)
+    Numerical convergence metrics: Rhat, Bulk ESS, and Tail ESS (HW #9: Questions 8a & 8c)
+- Create bayes-decision-rope-bf-01.R 
+    Quantile (ETI) vs. Highest Density Intervals (HDI) (HW #8: Questions 4d & 5c; HW #9: Questions 3a–c, 4a, & 9a–c)
+    Prior/Posterior Odds and Bayes Factor ($BF_{10}$) calculations (HW #9: Questions 4c–d & 11)
+    Region of Practical Equivalence (ROPE) and ROPE-HDI decision rules (HW #9: Questions 10a–c)
 
 ## Python
 
@@ -136,8 +148,14 @@ Uses publicly available data to summarize crime trends.
 > Relationship Mapping Tool
 Maps connections between target individuals by profession and documented connection to key current events. *Related: Project SHADOW.*
 > Texting Risk Assessment Calculator 
-Evaluates text communication data to identify risk indicators and optimize text response. 
-
+Evaluates text communication data to identify risk indicators and optimize text response.   
+**TODO:**
+*As of 13:15, Fri, 10/30/26.*
+- Watch "Introduction to NetworkX in Python" [Source: YouTube](https://www.youtube.com/watch?v=flwcAf1_1RU)
+- Watch "Learn Pandas in 1 hour!" [Source: YouTube](https://www.youtube.com/watch?v=VXtjG_GzO7Q)
+- Watch "Python Tutorial: Datetime Module" [Source: Youtube](https://www.youtube.com/watch?v=eirjjyP2qcQ)
+- Watch "Complete Python
+- Read/extract outline from "City of Boston SEMI-ANNUAL REPORT FY2026" [Source: Boston.gov](https://www.boston.gov/sites/default/files/file/2026/05/FY26%20Semi-Annual%20Report%20final%20_0.pdf)
 
 # AI Use
 Grok/Grokipedia were used to for debugging, automation, and preliminary research. ChatGPT and Gemini were used for conversational brainstorming and writing edits/revision.
