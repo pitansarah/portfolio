@@ -91,10 +91,9 @@ Present an argument that synthesizes academic research to evaluate a specific co
 ## Reports
 Formal document that evaluates empirical findings to diagnose a condition and outline actionable recommendations.
 
-> Schizophrenia & Social Learning    
-**TODO**:
-- Find info sources on: 1) current research on schizophrenia/social learning and 2) Hawk-Dove game modeling. 
-- Schizophrenia &...: Build simulation framework ()
+> Schizophrenia & Social Learning  
+
+[Read the full Methods Documentation](psych-evals/reports/social-learning-schizophrenia/methods.md)
 
 # Quantitative Analysis
 Contains coursework excerpts demonstrating statistical modeling. Written in Python and R. 
