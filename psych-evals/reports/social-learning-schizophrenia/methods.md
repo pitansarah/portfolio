@@ -39,37 +39,46 @@ This document outlines the methodological approaches, analytical frameworks, and
 
 
 ## Project: 
+*All code unless otherwise specified is to be written in R.*
 Methods:
-1. **Define Priors**: 
+**Define Priors**: 
 
-<div style="border: 1px solid #0969DA; padding: 10 px; border-radius: 8px; background-color: #89CFF0;">
-  <ul>
-    <strong>: Deliverable</strong>: A written mathematical specification block mapping priors to PyMC random variables.
-  </ul>
+<div style="border: 1px solid #0969DA; padding: 10px; border-radius: 0; background-color: #89CFF0;">
+  <strong>Deliverable</strong>: An R code block with Bayesian prior specifications involving simulation variables.
 </div>
 <br>
 
-- *Learning Level*: What is the probability of the individual successfully changing strategy with the aim of repairing a social conflict? *(Assigned via weakly informative hierarchical Beta or Normal priors on log-odds scales, e.g., $\alpha \sim \text{Beta}(2, 5)$).*
-- *Conflict Sensitivity*: What is the probability that modifying strategy will cause inner conflict for the individual? *(Modeled via latent individual-level threshold or penalty parameters).*
-- *Reality Divergence Rate*: What is the probability that the individual changes his/her understanding of the game's purpose/definition instead of learning? *(Modeled as an alternative behavioral shift probability parameter).*
+**Prior 1**: *Learning Level*: What is the probability of the individual successfully changing strategy with the aim of repairing a social conflict? 
+<center>$\alpha \sim \text{Beta}(2, 5)$</center>
+<br>
+<small>Reasoning: Beta models are used when a variable,  like learning level, represents a number in between 0 and 1. Here, 1 represents immediate strategy adaptation and 0 represents complete learning rigidity, the estimated prior mean for learning levels during social conflict is 0.28 (calculated as $\frac{\alpha}{\alpha + \beta\\}$). $\alpha = 2$ represents the shape parameter for successes, and $\beta = 5$ represents the shape parameter for failures. Success represents a strategy change that repairs the conflict (resulting in a win), while failure represents an agent sticking with their current strategy. Because $\beta$ is greater than $\alpha$, the prior distribution is right-skewed. This reflects the psychological tendency for healthy individuals to overcome cognitive friction in order to resolve social conflict, which requires less frequent and more conditional adaptation. </small>
+</div>
+<br>
+<br>
+
+**Prior 2**: *Conflict Sensitivity*: What is the probability that modifying strategy will cause inner conflict for the individual? *(Modeled via latent individual-level threshold or penalty parameters).*
+
+<center>$$\begin{aligned} \text{\textbf{Hyperparameters}} &\quad (\text{Group-level distributions}) \\ \mu_\tau &\sim \text{Normal}(0, 1) \\ \sigma_\tau &\sim \text{HalfNormal}(0.5) \\ \text{\textbf{Level-1 Priors}} &\quad (\text{Individual-level parameters for agent } i) \\ \alpha_i &\sim \text{Beta}(2, 5) \\ \tau_i &\sim \text{Normal}(\mu_\tau, \sigma_\tau^2) \end{aligned}$$</center>
+
+<small>Reasoning: The normal distribution is chosen here because it allows for slight variation of individuals within a general population trend of conflict sensitivity. The hyperparameters (which define the groups' average behavior and spread reasonably according to human psychology) are $\mu_\tau$ and $\sigma_\tau$. $\mu_\tau$ represents conflict sensitivity levels of the human population, on average. The model $\mu_\tau \sim \text{Normal}(0, 1)$ says 'On average, it's expected that most humans operate rationally and experience very low conflict sensitivity. $\sigma_\tau$ represents the group variation of conflict sensitivity within the population. $\sigma_\tau \sim \text{HalfNormal}(0.5)$ means: 'There may be variance from one individual to another, but these differences are reasonable (bounded).' The prior definition $\tau_i \sim \text{Normal}(\mu_\tau, \sigma_\tau^2)$ frames the parameter of conflict sensitivity by sampling from the hyperparameters. </small>
+
+**Prior 3:** *Reality Divergence Rate*: What is the probability that the individual changes his/her understanding of the game's purpose/definition instead of learning? *(Modeled as an alternative behavioral shift probability parameter).*
+
+<center> </center>
  
-2. **Run game-theory simulation (Data)**:
+2. **Run game-theory simulation Using Python(Data)**:
 
-<div style="border: 1px solid #0969DA; padding: 10px; border-radius: 8px; background-color: #89CFF0;">
+<div style="border: 1px solid #0969DA; padding: 10px; border-radius: 0; background-color: #89CFF0;">
   <ul>
-    <strong> Action</strong>: Write a simple Python script simulating two distinct agent groups (Control vs. Clinical proxy) playing $N$ rounds of Hawk-Dove with payoff parameters $C > V$. Incorporate a conditional shift rule triggered when an agent experiences a mutual Hawk-Hawk clash.<br>
-    <strong>Deliverable</strong>: A Python script (`src/simulation.py`) that generates a clean pandas DataFrame (`agent_id`, `round`, `group`, `choice`, `payoff`, `conflict_prev`, `switched`) stored in `data/simulated_agents.csv`.
+    <strong> Deliverable</strong>: Write a Python script simulating two distinct agent groups (Control vs. Clinical proxy) playing $N$ rounds of Hawk-Dove with payoff parameters $C > V$. Incorporate dynamic drivers based on player's mood, opponent history, etc. The drivers may use Bayesian updating.
   </ul>
 </div>
 <br>
 
-- *Simulation runs*: Agents play $N$ rounds of Hawk-Dove. Data is logged into the table above.
-- *Bayesian Inference runs*: Take logged table, pass it into PyMC, and use MCMC sampling.
-- *Posterior Check*: The model indicates, for example: "Given the choices they made after triggering clashes, there is a 95% probability that this participant's learning rate $\alpha$ lies between $0.15$ and $0.25$."
     
 3. **Define likelihood**:
 
-<div style="border: 1px solid #0969DA; padding: 10px; border-radius: 8px; background-color: #89CFF0;">
+<div style="border: 1px solid #0969DA; padding: 10px; border-radius: 0; background-color: #89CFF0;">
   <ul>
      <strong> Action</strong>: Translate the behavioral transition rules into a formal statistical observation model. Model the binary outcome of strategy adjustment ($\text{Switch}_{i,t}$) on trial $t$ using a **Bernoulli likelihood** with a logit link function:
      <div style = 'overflow-x: auto; max-width: 100%; padding; 4px 0; margin: 4px 0;'>
@@ -87,7 +96,7 @@ Methods:
     
 4. **Posterior**:
 
-<div style="border: 1px solid #0969DA; padding: 10 px; border-radius: 8px; background-color: #89CFF0;">
+<div style="border: 1px solid #0969DA; padding: 10 px; border-radius: 0; background-color: #89CFF0;">
   <ul>
     <strong>Action</strong>: Sample from the joint posterior distribution using PyMC’s NUTS sampler (`pm.sample(draws=1000, tune=1000, target_accept=0.95)`). Diagnose sampler convergence using standard metrics ($\hat{R} \le 1.05$ and effective sample size). 
     <br>
@@ -101,7 +110,7 @@ Methods:
     
 5. **Inference**:
 
-<div style="border: 1px solid #0969DA; padding: 10 px; border-radius: 8px; background-color: #89CFF0;">
+<div style="border: 1px solid #0969DA; padding: 10 px; border-radius: 0; background-color: #89CFF0;">
   <ul>
     <strong> Action</strong> Execute **Posterior Predictive Checks (PPC)** using `pm.sample_posterior_predictive` to generate simulated choice data from the posterior parameters and compare them against observed choices.
     <br>

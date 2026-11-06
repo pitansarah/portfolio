@@ -5,6 +5,7 @@ The code for this program was modeled after Dr. Xue (University of Florida) and 
 found here: https://cmp.phys.ufl.edu/PHZ4710/files/unit8/hawk-dove.html.
 """
 
+
 import numpy as np
 
 # --- GAME ---
@@ -36,6 +37,16 @@ class ControlHawkDove(SymmetricGame):
 
         opp_dist = []
         """update own_dist dynamically using Bayesian belief updating model (see notes)"""
+
+# --- Glossary ---
+#   memory variables:
+#       self.history_actions: a list recording every round's moves (my_move and opp_move)
+#       self.alpha & self.beta: accumulate weighted evidence of whether opponent plays alpha (Hawk) or beta (Dove)
+#   behavioral adjustment variables:
+#       probability calculations: 
+#       payoff calculations
+#       regret calculations
+
 
 # --- BELIEF UPDATER COMPONENTS (Drivers) ---
 class LearningDriver:
@@ -79,14 +90,36 @@ class RegretDriver:
             self.omega = self.base_omega + (self.omega - self.base_omega) * self.sensitivity_decay
         return self.omega
 
+class LossProcessingDriver:
+    # gain_weight: how much the player values gains (control: 1.0, schizophrenic: 0.5 - 0.7 or 2.0 - 2.7)
+    # loss aversion lambda is how much the player is averse to losses (control value modelled according to behavioral economics)
+    def __init__(self, gain_weight = 1.0, loss_aversion_lambda = 2.25):
+        self.gain_weight = gain_weight
+        self.loss_aversion_lambda = loss_aversion_lambda
+    def evaluate_payoff(self, payoff):
+        """Evaluates how useful payoff is by weighting positive payoffs and negative payodds separately"""
+        if payoff >= 0:
+            return payoff * self.gain_weight
+        else:
+            return payoff * self.loss_aversion_lambda
+
 # --- BELIEF UPDATER ---
 class BayesianBeliefUpdater:
     """include all components of Bayesian belief updating here"""
     def __init(self):
-        self.driver = LearningDriver()
-    # update_round receives what you and opponent played and updates self.alpha or self.beta
+        self.drivers = [
+            LearningDriver(),
+            RegretDriver(),
+            LossProcessingDriver(),
+
+        ]
+    # update_round loops through all belief drivers and passes them to actions 
+    # so players can update memory vars and behavioral adjustment vars 
     def update_round(self, my_action, opponent_action):
-        self.driver.play_round(my_action, opponent_action)
+        for drive in self.drivers:
+            if hasattr(drive, 'play_round'):
+                drive.play_round(my_action, opponent_action)
+        
 
 # --- PLAYERS --- 
 # 1A + 1B = control group (healthy)
