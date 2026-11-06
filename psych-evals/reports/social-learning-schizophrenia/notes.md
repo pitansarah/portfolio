@@ -1,6 +1,6 @@
 
 "The Hawk Dove Game" 
-[Source: Dr. BingKan Xue / University of Florida](https://cmp.phys.ufl.edu/PHZ4710/index.html)
+[Source: Dr. BingKan Xue / University of Florida](https://cmp.phys.ufl.edu/PHZ4710/files/unit8/hawk-dove.html)
 
 ### Intro
 
@@ -32,10 +32,54 @@
 
 - *two-player symmetric games* remove role-based tactics (e.g.: hawk and dove) because the individual and the opponent are structurally identical, so fitness (survival) only depends on the strategy the rest of the population is playing, or p_j 
 
+### Hawk-Dove Game: Explanation
 - *hawk-dove game ...* when injury costs exceed the resource vaue (C > V), this forces... implying:
     - when hawks are rare, they thrive (invade Doves)
     - as Hawkks increase in frequency, the probability of encountering another Hawk rises, making injury costs C dominant
     - once hawks become too common, the expected payoff drops below that being a dove, which allows doves to thrive
     - this is *self-correcting negative fequency-dependent feedback* which forces the system into an internal equilibrium; the higher the injury cost C relative to the resource value V, the fewer Hawks the population can support at equilibrium
+- Hawk & Dove represent two different behaviors among same species in a competition
+- if players do Hawk and Dove, Hawk wins and takes reward V while Dove leaves with no reward
+    - Hawk: V, Dove: 0
+- if players do Dove and Dove they each get half of the reward V/2
+    - Dove: V/2, Dove: V/2
+- if players do Hawk and Hawk, there will be a conflict; each Hawk has a 50% chance of winning reward V, but there will always be a cost C associated with this fight 
+    - Hawk: (V-C)/2, Haw: (V-C)/2
 
-### Hawk-Dove Game
+### Hawk-Dove game: simulation
+- see `hawk-dove-simulation.r`
+- in the simulation, C > V because if C < V, the cost of fighting would be lower than the value of the reward and there would be no evolutionary reason to play as a Dove
+- because C > V, a Hawk-Hawk fight results in a huge net loss
+
+#### Bayesian belief updating model
+- used as a model to accurately reflect human decision making during conflict
+- it keeps the following in mind: 
+    - *learning driver*: past payoffs, opponent history
+        - **self.history_actions** to store past choices
+        - **self.alpha** & **self.beta** to track cumulative opponent moves
+    - *mood (regret)*: players may second guess themselves/ consider what may happen before their actions
+        - **regret = utility_unchosen - utility_chosen**
+        - **omega**: regret weight parameter
+    - *loss processing*: assymetric; losses affect mood more negatively than wins affect positively
+        - negative payoffs are multiplied by a loss-aversion coefficient **lambda**
+        ```
+        def evaluate_payoff(self, payoff):
+            if payoff < 0:
+                return payoff * self.loss_aversion_lambda
+            return payoff
+        ```
+    - *decision noise*: humans sometimes do not behave logically due to random error, fatigue, or distraction (e.g.: They might play Dove even though it has only been successful 45% of the time.)
+        - use a softmax choice rule instead of rigid if/else choice, which allows for occasional irrational/random moves
+        - **equation**: $$P(\text{Hawk}) = \frac{e^{\tau \cdot EU(\text{Hawk})}}{e^{\tau \cdot EU(\text{Hawk})} + e^{\tau \cdot EU(\text{Dove})}}$$
+        - P(Hawk): probability of chosing Hawk
+        - *e*: Euler's number
+        - \tau: sensitivity to differences in expected utility; higher in healthy individuals, lower in schizophrenic individuals
+        - *EU*: expected utility
+    - *memory decay*: a player gives more weight to more recent events and tends to forget past history
+        - **decay factor (gamma)**: applied to individual player's priors **alpha** and **beta** at the start of every round so that older observations slowly fade form memory
+        - alpha and beta are priors from each player that get updated as the player observes their opponent
+        - **equation**: alpha_new = gamma * alpha_old + New Observation
+    - *prior belief strength*: extremely rigid for individuals with schizophrenia, flexible in healthy individuals
+        - in healthy controls, use low initial priors that shift easily when presented new evidence
+        - in schizophrenia group, use high priors that are rigid
+   

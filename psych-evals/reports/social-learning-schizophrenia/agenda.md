@@ -6,7 +6,7 @@
 * **Nov 5**: Synthesize notes into background references and draft the formal project abstract.
 
 ### Phase 2: Hawk-Dove Agent Simulation & PyMC Model Setup (Nov 6 – Nov 15) [10 Days]
-* **Nov 6–8**: Formulate agent behavior rules in `src/simulation.py`. Program two groups (Control vs. Clinical Proxy) playing $N$ rounds of the Hawk-Dove matrix. Set up the dynamic strategy-switching rule triggered exclusively after mutual escalation ($\text{Hawk}_i \text{ vs. Hawk}_j \rightarrow \text{Conflict}_{i, t-1} = 1$), where control agents switch strategies to repair social friction while clinical proxy agents exhibit a lower baseline switching rate ($\alpha_i$).
+* **Nov 6–8**: Formulate agent behavior rules in `src/simulation.py`. Program two groups (Control vs. Experimental) playing $N$ rounds of the Hawk-Dove matrix. Set up the dynamic strategy-switching rule triggered exclusively after mutual escalation ($\text{Hawk}_i \text{ vs. Hawk}_j \rightarrow \text{Conflict}_{i, t-1} = 1$), where control agents switch strategies to repair social friction while clinical proxy agents exhibit a lower baseline switching rate ($\alpha_i$).
 * **Nov 9–11**: Run simulations to generate agent choice histories. Format and export the output into `data/simulated_agents.csv` containing columns: `agent_id`, `round`, `group`, `choice` (0=Dove, 1=Hawk), `payoff`, `conflict_prev` (lagged conflict state), and `switched` (binary decision update $\text{Switch}_{i,t}$).
 * **Nov 12–14**: Formulate hyperpriors ($\beta_0, \beta_{\text{group}}$) and individual priors ($\alpha_i$). Construct `src/model.py` incorporating the logit link equation:
   $$\text{logit}(p_{i,t}) = \beta_0 + \beta_{\text{group}}(\text{Group}_i) + \alpha_i(\text{Conflict}_{i, t-1})$$
